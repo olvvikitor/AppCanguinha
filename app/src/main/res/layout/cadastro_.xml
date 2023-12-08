@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faça seu cadastro"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <Button
+        android:id="@+id/cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="cadastrar"
+        android:text="Button"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Junte-se a nossa comunidade e aprenda a economizar seu dinheiro"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/userCadastrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="entrar"
+        android:text="Ja tenho uma conta"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="303dp" />
+</android.support.constraint.ConstraintLayout>
