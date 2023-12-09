@@ -5,43 +5,105 @@
     android:id="@+id/btnEntrar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Login">
-
-  <EditText
-      android:id="@+id/editEmail"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:drawableLeft="@drawable/baseline_email_24"
-      android:ems="10"
-      android:inputType="text|textEmailAddress"
-      android:text="Email"
-      tools:layout_editor_absoluteX="91dp"
-      tools:layout_editor_absoluteY="167dp" />
+    tools:context=".activity.Login"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="@drawable/background">
 
   <TextView
-      android:id="@+id/textView3"
-      android:layout_width="wrap_content"
+      android:id="@+id/textViewAnime"
+      android:layout_width="395dp"
       android:layout_height="wrap_content"
-      android:text="Login"
-      tools:layout_editor_absoluteX="167dp"
-      tools:layout_editor_absoluteY="133dp" />
+      android:layout_centerHorizontal="true"
+      android:text="Canguinha"
+      android:textColor="#FFFF00"
+      android:textSize="60sp"
+      android:textStyle="italic"
+      tools:layout_editor_absoluteX="50dp"
+      tools:layout_editor_absoluteY="156dp" />
 
-  <EditText
-      android:id="@+id/editSenha"
-      android:layout_width="wrap_content"
+  <LinearLayout
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:drawableLeft="@drawable/icon_cadeado"
-      android:ems="10"
-      android:inputType="text|textPassword"
-      android:text="Senha"
-      tools:layout_editor_absoluteX="91dp"
-      tools:layout_editor_absoluteY="223dp" />
+      android:background="@drawable/container_background"
+      android:orientation="vertical"
+      android:padding="16dp"
+      tools:layout_editor_absoluteX="16dp"
+      tools:layout_editor_absoluteY="329dp">
 
-  <Button
-      android:id="@+id/btnLogin"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Entrar"
-      tools:layout_editor_absoluteX="136dp"
-      tools:layout_editor_absoluteY="295dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/subcontainer_background"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+      <EditText
+          android:id="@+id/editTextEmail"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="E-mail"
+          android:inputType="textEmailAddress"
+          android:drawableLeft="@drawable/baseline_email_24"/>
+    </LinearLayout>
+
+    <!-- Container para o campo de senha -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/subcontainer_background"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+      <EditText
+          android:id="@+id/editTextPassword"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Senha"
+          android:inputType="textPassword"
+          android:drawableLeft="@drawable/icon_cadeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <com.google.android.material.chip.Chip
+          android:id="@+id/chipLembraSenha"
+          android:layout_width="33dp"
+          android:layout_height="38dp"
+          android:layout_marginEnd="8dp" />
+
+      <TextView
+          android:id="@+id/textViewLembraSenha"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Lembrar senha"
+          android:textColor="#FFFFFF"
+          android:textSize="20sp"
+          android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="292dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:text="Criar"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/botao"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
