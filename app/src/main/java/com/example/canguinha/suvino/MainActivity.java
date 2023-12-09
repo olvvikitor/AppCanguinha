@@ -22,43 +22,32 @@ public class MainActivity extends IntroActivity {
         setButtonNextVisible(false);
 
         addSlide(new SimpleSlide.Builder()
-                .title("Titulo1").background(R.color.black)
-                .description("Descrição2").background(R.color.black)
+                .background(android.R.color.holo_red_light)
+                .title("Title 1")
+                .description("Descriptor2")
                 .image(R.drawable.um)
-                .background(android.R.color.white)
-                .canGoBackward(true)
-                .canGoForward(false)
+                .canGoBackward(false)
+                .canGoForward(true)
                 .build());
         addSlide(new SimpleSlide.Builder()
-                .title("Titulo2").background(R.color.black)
-                .description("Descrição2").background(R.color.black)
+                .title("Titulo2")
+                .description("Descrição2")
                 .image(R.drawable.dois)
                 .background(android.R.color.white)
                 .canGoBackward(true)
-                .canGoForward(false)
+                .canGoForward(true)
                 .build());
         addSlide(new SimpleSlide.Builder()
-                .title("Titulo3").background(R.color.black)
-                .description("Descrição2").background(R.color.black)
+                .background(android.R.color.white)
+                .title("Titulo3")
+                .description("Descrição2")
                 .image(R.drawable.tres)
-                .background(android.R.color.white)
                 .canGoBackward(true)
                 .canGoForward(true)
                 .build());
         addSlide(new SimpleSlide.Builder()
-                .title("Titulo4").background(R.color.black)
-                .description("Descrição2").background(R.color.black)
-                .image(R.drawable.quatro)
                 .background(android.R.color.white)
-                .canGoBackward(true)
-                .canGoForward(true)
-                .build());
-
-        addSlide(new FragmentSlide.Builder()
-                .background(android.R.color.white)
-                .fragment(R.layout.cadastro_)
-                .canGoBackward(true)
-                .canGoForward(false)
+                .layout(R.layout.cadastro_)
                 .build());
     }
     public void cadastrar(View view){

@@ -3,6 +3,6 @@
     <solid android:color="#FFFFFF" /> <!-- Cor de fundo -->
     <corners android:radius="20dp" /> <!-- Raio dos cantos -->
     <stroke
-        android:width="0.5dp" <!-- Largura da borda -->
-    android:color="#CCCCCC" /> <!-- Cor da borda -->
+        android:width="0.5dp"
+        android:color="#CCCCCC"></stroke>
 </shape>
