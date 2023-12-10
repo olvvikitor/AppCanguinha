@@ -22,17 +22,15 @@ public class MainActivity extends IntroActivity {
         setButtonNextVisible(false);
 
         addSlide(new SimpleSlide.Builder()
-                .background(android.R.color.holo_red_light)
-                .title("Title 1")
-                .description("Descriptor2")
+                .background(R.color.white)
                 .image(R.drawable.um)
                 .canGoBackward(false)
                 .canGoForward(true)
                 .build());
         addSlide(new SimpleSlide.Builder()
+                .image(R.drawable.dois)
                 .title("Titulo2")
                 .description("Descrição2")
-                .image(R.drawable.dois)
                 .background(android.R.color.white)
                 .canGoBackward(true)
                 .canGoForward(true)
