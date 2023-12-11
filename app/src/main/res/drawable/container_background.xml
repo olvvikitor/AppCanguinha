@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#353434" /> <!-- Cor de fundo -->
-    <corners android:radius="20dp" /> <!-- Raio dos cantos -->
-    <stroke
-        android:width="0.5dp"
-        android:color="#595959"></stroke> <!-- Largura da borda -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Solid Background (Branco) -->
+    <item>
+        <shape>
+            <solid android:color="#FFFFFF"/> <!-- Alterado para branco -->
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
 
-    </shape>
+    <!-- Dynamic Shadow -->
+    <item
+        android:right="10dp"
+        android:left="10dp"
+        android:top="10dp"
+        android:bottom="10dp">
+        <shape>
+            <solid android:color="#66FFFFFF"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+</layer-list>

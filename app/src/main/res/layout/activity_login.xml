@@ -98,7 +98,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="33dp"
         android:layout_marginTop="16dp"
-        android:text="Criar"
+        android:text="ENTRAR"
         android:textColor="#FFFFFF"
         android:background="@drawable/botao"
         android:textSize="27sp"
