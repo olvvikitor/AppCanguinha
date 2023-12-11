@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.Canguinha" parent="Base.Theme.Canguinha" />
+
+    <style name="Theme.Canguinha.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Canguinha.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Canguinha.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
