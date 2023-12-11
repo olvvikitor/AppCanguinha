@@ -103,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#FF8A65"
+            android:onClick="Cadastrar"
             android:text="🚀 Cadastrar 🚀"
             android:textSize="18sp" />
 

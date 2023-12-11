@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.canguinha.suvino.activity.Cadastro;
 import com.example.canguinha.suvino.activity.Login;
 import com.example.canguinha.suvino.activity.Principal_activity;
+import com.example.canguinha.suvino.config.FirebaseConfig;
 import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
@@ -65,7 +66,7 @@ public class MainActivity extends IntroActivity {
 
     }
     public void  verificarUsuarioLogado(){
-        autentificacao = ConfiguracaoFirebase.getFireAutentificacao();
+        autentificacao = FirebaseConfig.getFirebaseuth();
                 if (autentificacao.getCurrentUser() != null){
                 abrirTelaPrincipal();
                 }
