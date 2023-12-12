@@ -4,7 +4,7 @@
     <!-- Solid Background (Branco) -->
     <item>
         <shape>
-            <solid android:color="#FFFFFF"/> <!-- Alterado para branco -->
+            <solid android:color="#E4E1E1"/> <!-- Alterado para branco -->
             <corners android:radius="20dp"/>
         </shape>
     </item>
