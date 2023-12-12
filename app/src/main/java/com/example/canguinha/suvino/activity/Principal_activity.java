@@ -1,22 +1,17 @@
 package com.example.canguinha.suvino.activity;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.os.Bundle;
 import android.view.View;
-
-import androidx.core.view.WindowCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import com.example.canguinha.suvino.R;
+import com.example.canguinha.suvino.databinding.ActivityPrincipalBinding;
+import com.google.android.material.snackbar.Snackbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import com.example.canguinha.suvino.databinding.ActivityPrincipalBinding;
-
-import com.example.canguinha.suvino.R;
 
 public class Principal_activity extends AppCompatActivity {
 
@@ -39,11 +34,16 @@ public class Principal_activity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
+                // Ao clicar no FAB, abre um diálogo para criar receitas ou despesas
+                openCreateDialog();
             }
         });
+    }
+
+    private void openCreateDialog() {
+        // Use um DialogFragment para exibir um diálogo para a criação de receitas ou despesas
+        CreateItemDialogFragment dialogFragment = new CreateItemDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), "CreateItemDialog");
     }
 
     @Override
