@@ -18,14 +18,6 @@
             android:label="@string/title_activity_principal"
             android:theme="@style/Theme.Canguinha" />
         <activity
-            android:name=".activity.Principal_activity1"
-            android:exported="false"
-            android:label="@string/title_activity_principal1"
-            android:theme="@style/Theme.Canguinha.NoActionBar" />
-        <activity
-            android:name=".activity.Login"
-            android:exported="false" />
-        <activity
             android:name=".activity.Cadastro"
             android:exported="false" />
         <activity
