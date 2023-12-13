@@ -27,9 +27,9 @@
     <style name="receitas_theme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">#00FF0D</item>
-        <item name="colorPrimaryDark">#53DD19</item>
-        <item name="colorAccent">#C9FFA2</item>
+        <item name="colorPrimary">#0048FF</item>
+        <item name="colorPrimaryDark">#0037FF</item>
+        <item name="colorAccent">#0033EF</item>
     </style>
 
     <style name="Theme.Canguinha.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
