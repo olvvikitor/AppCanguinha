@@ -13,15 +13,17 @@
         android:theme="@style/Theme.Canguinha"
         tools:targetApi="31">
         <activity
-            android:name=".activity.Principal_activity"
+            android:name=".activity.DespesasActivity"
             android:exported="false"
-            android:label="@string/title_activity_principal"
-            android:theme="@style/Theme.Canguinha" />
+            android:theme="@style/despesas_theme"/>
         <activity
-            android:name=".activity.Principal_activity1"
+            android:name=".activity.ReceitasActivity"
             android:exported="false"
-            android:label="@string/title_activity_principal1"
-            android:theme="@style/Theme.Canguinha.NoActionBar" />
+            android:theme="@style/receitas_theme"/>
+        <activity
+            android:name=".activity.Principal_acitivity"
+            android:exported="false"
+            android:theme="@style/privipal_NoActionBar"/>
         <activity
             android:name=".activity.Login"
             android:exported="false" />
@@ -34,7 +36,6 @@
             android:theme="@style/Theme.Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

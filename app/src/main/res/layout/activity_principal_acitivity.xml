@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.Principal_acitivity">
+
+<com.google.android.material.appbar.AppBarLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:fitsSystemWindows="true">
+
+<com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:background="?attr/colorPrimary">
+
+</com.google.android.material.appbar.MaterialToolbar>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<com.github.clans.fab.FloatingActionMenu
+android:id="@+id/menu_principal"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="end|bottom"
+android:layout_margin="16dp"
+    app:menu_colorNormal="#10F109"
+    app:menu_colorPressed="#0D5A00"
+    app:menu_icon="@drawable/button_add">
+
+<com.github.clans.fab.FloatingActionButton
+android:id="@+id/menu_despesas"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="adicionarDespesa"
+android:src="@drawable/button_add"
+app:fab_colorNormal="#E91E63"
+app:fab_label="Despesa"
+app:fab_size="mini" />
+
+<com.github.clans.fab.FloatingActionButton
+android:id="@+id/menu_receita"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:onClick="adicionarReceita"
+android:src="@drawable/button_add"
+app:fab_colorNormal="#5659D8"
+app:fab_label="Receita"
+app:fab_size="mini" />
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

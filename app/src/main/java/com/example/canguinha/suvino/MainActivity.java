@@ -1,18 +1,15 @@
 package com.example.canguinha.suvino;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.canguinha.suvino.activity.Cadastro;
 import com.example.canguinha.suvino.activity.Login;
-import com.example.canguinha.suvino.activity.Principal_activity;
+import com.example.canguinha.suvino.activity.Principal_acitivity;
 import com.example.canguinha.suvino.config.FirebaseConfig;
 import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
-import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 
 public class MainActivity extends IntroActivity {
@@ -73,7 +70,7 @@ public class MainActivity extends IntroActivity {
     }
 
     public void abrirTelaPrincipal(){
-        startActivity(new Intent(this, Principal_activity.class));
+        startActivity(new Intent(this, Principal_acitivity.class));
 
     }
 }
