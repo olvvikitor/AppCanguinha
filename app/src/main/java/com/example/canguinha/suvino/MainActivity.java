@@ -10,6 +10,7 @@ import com.example.canguinha.suvino.activity.Principal_acitivity;
 import com.example.canguinha.suvino.config.FirebaseConfig;
 import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
+import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 
 public class MainActivity extends IntroActivity {
@@ -23,34 +24,33 @@ public class MainActivity extends IntroActivity {
         setButtonBackVisible(false);
         setButtonNextVisible(false);
 
-        addSlide(new SimpleSlide.Builder()
-                .background(R.color.white)
-                .image(R.drawable.um)
-                .canGoBackward(false)
+
+        addSlide( new FragmentSlide.Builder()
+                .background(android.R.color.white)
+                .fragment(R.layout.intro_1)
+                .build());
+
+        addSlide( new FragmentSlide.Builder()
+                .background(android.R.color.white)
+                .fragment(R.layout.intro_2)
+                .build());
+
+        addSlide( new FragmentSlide.Builder()
+                .background(android.R.color.white)
+                .fragment(R.layout.intro_3)
+                .build());
+
+        addSlide( new FragmentSlide.Builder()
+                .background(android.R.color.white)
+                .fragment(R.layout.intro_4)
                 .canGoForward(true)
                 .build());
-        addSlide(new SimpleSlide.Builder()
-                .image(R.drawable.dois)
-                .title("Titulo2")
-                .description("Descrição2")
+        addSlide( new FragmentSlide.Builder()
                 .background(android.R.color.white)
-                .canGoBackward(true)
-                .canGoForward(true)
-                .build());
-        addSlide(new SimpleSlide.Builder()
-                .background(android.R.color.white)
-                .title("Titulo3")
-                .description("Descrição2")
-                .image(R.drawable.tres)
-                .canGoBackward(true)
-                .canGoForward(true)
-                .build());
-        addSlide(new SimpleSlide.Builder()
-                .background(android.R.color.white)
-                .layout(R.layout.cadastro_)
-                .canGoBackward(true)
+                .fragment(R.layout.cadastro_)
                 .canGoForward(false)
                 .build());
+
     }
 
     protected void onStart(){
