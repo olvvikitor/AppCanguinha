@@ -48,6 +48,8 @@ public class MainActivity extends IntroActivity {
         addSlide(new SimpleSlide.Builder()
                 .background(android.R.color.white)
                 .layout(R.layout.cadastro_)
+                .canGoBackward(true)
+                .canGoForward(false)
                 .build());
     }
 
@@ -57,13 +59,13 @@ public class MainActivity extends IntroActivity {
     }
     public void Cadastrar(View view){
         startActivity(new Intent(this, Cadastro.class));
-
     }public void Entrar(View view){
         startActivity(new Intent(this, Login.class));
 
     }
     public void  verificarUsuarioLogado(){
         autentificacao = FirebaseConfig.getFirebaseuth();
+       // autentificacao.signOut();
                 if (autentificacao.getCurrentUser() != null){
                 abrirTelaPrincipal();
                 }

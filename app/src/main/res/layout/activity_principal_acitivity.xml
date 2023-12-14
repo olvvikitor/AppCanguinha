@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,51 +9,74 @@
     android:fitsSystemWindows="true"
     tools:context=".activity.Principal_acitivity">
 
-<com.google.android.material.appbar.AppBarLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:fitsSystemWindows="true">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 
-<com.google.android.material.appbar.MaterialToolbar
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="95dp"
-    android:background="?attr/colorPrimary">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:background="?attr/colorPrimary">
 
-</com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.MaterialToolbar>
 
-</com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-<com.github.clans.fab.FloatingActionMenu
-android:id="@+id/menu_principal"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_gravity="end|bottom"
-android:layout_margin="16dp"
-    app:menu_colorNormal="#10F109"
-    app:menu_colorPressed="#0D5A00"
-    app:menu_icon="@drawable/button_add">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-<com.github.clans.fab.FloatingActionButton
-android:id="@+id/menu_despesas"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:onClick="adicionarDespesa"
-android:src="@drawable/button_add"
-app:fab_colorNormal="#E91E63"
-app:fab_label="Despesa"
-app:fab_size="mini" />
+        <!-- Name Field -->
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="text" />
 
-<com.github.clans.fab.FloatingActionButton
-android:id="@+id/menu_receita"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:onClick="adicionarReceita"
-android:src="@drawable/button_add"
-app:fab_colorNormal="#5659D8"
-app:fab_label="Receita"
-app:fab_size="mini" />
+        <!-- Total Value Field -->
+        <EditText
+            android:id="@+id/editTextTotalValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Value"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        app:menu_colorNormal="#10F109"
+        app:menu_colorPressed="#0D5A00"
+        app:menu_icon="@drawable/button_add">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_despesas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="adicionarDespesa"
+            android:src="@drawable/button_add"
+            app:fab_colorNormal="#E91E63"
+            app:fab_label="Despesa"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_receita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="adicionarReceita"
+            android:src="@drawable/button_add"
+            app:fab_colorNormal="#5659D8"
+            app:fab_label="Receita"
+            app:fab_size="mini" />
     </com.github.clans.fab.FloatingActionMenu>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -3,14 +3,18 @@ package com.example.canguinha.suvino.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.canguinha.suvino.MainActivity;
 import com.example.canguinha.suvino.R;
+import com.example.canguinha.suvino.config.Base64Custom;
 import com.example.canguinha.suvino.config.FirebaseConfig;
 import com.example.canguinha.suvino.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,13 +26,14 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
+
 public class Cadastro extends AppCompatActivity {
 
     private EditText name, email, password;
     private Button cadastro;
     private FirebaseAuth auth;
-
     private Usuario usuario;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,7 @@ public class Cadastro extends AppCompatActivity {
         email = findViewById(R.id.emailUser);
         password = findViewById(R.id.passwordUserLogin);
         cadastro = findViewById(R.id.btnCadastrar);
+        progressBar = findViewById(R.id.progressBar);
 
         cadastro.setOnClickListener(view -> {
             String nname = name.getText().toString();
@@ -56,17 +62,29 @@ public class Cadastro extends AppCompatActivity {
             }
         });
     }
+    private void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
 
     private void cadastrarUsuario() {
+        showProgressBar();
         auth = FirebaseConfig.getFirebaseuth();
         auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        hideProgressBar();
                         if(task.isSuccessful()){
+                            String idUsuario = Base64Custom.encode(usuario.getEmail());
+                            usuario.setIdUsuario(idUsuario);
+                            usuario.salvar();
+
                             Toast.makeText(Cadastro.this, "Sucesso ao cadastrar usuario", Toast.LENGTH_SHORT).show();
-
-
+                            abrirTelaPrincipal();
                         }else {
                             String exception ="";
                             try{
@@ -86,5 +104,10 @@ public class Cadastro extends AppCompatActivity {
                         }
                     }
                 });
+
+    }
+    public void abrirTelaPrincipal() {
+        startActivity(new Intent(this, Principal_acitivity.class));
+        finish();
     }
 }

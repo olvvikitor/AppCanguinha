@@ -16,12 +16,6 @@ public class Principal_acitivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal_acitivity);
 
 
-
-        // Configurar outros elementos da tela, se necessário
-        // ...
-
-        // Configurar o FAB, se necessário
-        // ...
     }
 
     public void adicionarDespesa(View view) {

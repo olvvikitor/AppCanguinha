@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.canguinha.suvino.R;
@@ -28,6 +29,7 @@ public class Login extends AppCompatActivity {
 
     private Usuario usuario;
     private FirebaseAuth autentificacao;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,8 @@ public class Login extends AppCompatActivity {
         campoEmail =  findViewById(R.id.editTextEmail);
         campoSenha = findViewById(R.id.editTextPassword);
         button = findViewById(R.id.button);
+        progressBar = findViewById(R.id.progressBar);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +64,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void validarLogin(){
-        Object ConfiguracaoFirebase;
+        showProgressBar();
         autentificacao = FirebaseConfig.getFirebaseuth();
         autentificacao.signInWithEmailAndPassword(
                 usuario.getEmail(),
@@ -69,6 +73,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if( task.isSuccessful() ){
+                    hideProgressBar();
                     Toast.makeText(Login.this,"Sucesso ao fazer Login",Toast.LENGTH_SHORT).show();
                     abrirTelaPrincipal();
                 }else{
@@ -94,5 +99,12 @@ public class Login extends AppCompatActivity {
     public void abrirTelaPrincipal(){
         startActivity(new Intent(this, Principal_acitivity.class));
         finish();
+    }
+    private void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
     }
 }

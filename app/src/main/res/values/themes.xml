@@ -18,18 +18,18 @@
     <style name="despesas_theme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">#FF0000</item>
-        <item name="colorPrimaryDark">#BD3D3D</item>
-        <item name="colorAccent">#EC6C6C</item>
+        <item name="colorPrimary">#E30000</item>
+        <item name="colorPrimaryDark">#E30000</item>
+        <item name="colorAccent">#E30000</item>
     </style>
 
 
     <style name="receitas_theme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">#0048FF</item>
-        <item name="colorPrimaryDark">#0037FF</item>
-        <item name="colorAccent">#0033EF</item>
+        <item name="colorPrimary">#00BCD4</item>
+        <item name="colorPrimaryDark">#00BCD4</item>
+        <item name="colorAccent">#00BCD4</item>
     </style>
 
     <style name="Theme.Canguinha.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
