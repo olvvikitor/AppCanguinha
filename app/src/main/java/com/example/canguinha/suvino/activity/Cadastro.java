@@ -2,6 +2,7 @@ package com.example.canguinha.suvino.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -38,7 +39,6 @@ public class Cadastro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-
         // Inicializando os elementos de interface corretamente
         name = findViewById(R.id.nameUser);
         email = findViewById(R.id.emailUser);

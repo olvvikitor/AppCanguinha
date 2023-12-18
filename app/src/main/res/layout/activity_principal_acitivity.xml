@@ -9,44 +9,15 @@
     android:fitsSystemWindows="true"
     tools:context=".activity.Principal_acitivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <include layout="@layout/content_principal" />
+
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:layout_height="45dp"
+        android:background="#00F5E0"
+        app:elevation="0dp">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:background="?attr/colorPrimary">
-
-        </com.google.android.material.appbar.MaterialToolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- Name Field -->
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:inputType="text" />
-
-        <!-- Total Value Field -->
-        <EditText
-            android:id="@+id/editTextTotalValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Total Value"
-            android:inputType="numberDecimal" />
-
-    </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu_principal"
