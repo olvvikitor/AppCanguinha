@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.canguinha.suvino.R;
@@ -24,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ReceitasActivity extends AppCompatActivity {
 
-    private TextInputEditText campoDate, campoCategoria, campoDescricao;
+    private TextInputEditText campoDate, campoDescricao;
     private EditText campoValor;
     private Movimentacao movimentacao;
     private DatabaseReference ref = FirebaseConfig.getFirebase();
@@ -32,13 +34,19 @@ public class ReceitasActivity extends AppCompatActivity {
     private Double receitaTotal = 0.00;
     private Double receitaGerada = 0.00;
     private Double receitaAtualizada = 0.00;
+    private Spinner spinnerCategoriaReceita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receitas);
         campoDate = findViewById(R.id.dataReceita);
-        campoCategoria = findViewById(R.id.categoriaReceita);
+        spinnerCategoriaReceita = findViewById(R.id.CategoriaReceita);
+
+        String[] categorias = {"Salário", "Investimento", "Apostas", "Agiotagem"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categorias);
+        spinnerCategoriaReceita.setAdapter(adapter);
+
         campoDescricao = findViewById(R.id.descricaoReceita);
         campoValor = findViewById(R.id.valorReceita);
         campoDate.setText(DateCustom.dataAtual());
@@ -50,7 +58,7 @@ public class ReceitasActivity extends AppCompatActivity {
             String dateText = campoDate.getText().toString();
             movimentacao = new Movimentacao();
             movimentacao.setValor(Double.parseDouble(campoValor.getText().toString()));
-            movimentacao.setCategoria(campoCategoria.getText().toString());
+            movimentacao.setCategoria(spinnerCategoriaReceita.getSelectedItem().toString());
             movimentacao.setData(campoDate.getText().toString());
             movimentacao.setTipo("r");
             movimentacao.setDescricao(campoDescricao.getText().toString());
@@ -93,7 +101,7 @@ public class ReceitasActivity extends AppCompatActivity {
 
 
     public Boolean validarReceita() {
-        if (campoDate.getText().toString().isEmpty() || campoValor.getText().toString().isEmpty() || campoDescricao.getText().toString().isEmpty() || campoValor.getText().toString().isEmpty()) {
+        if (campoDate.getText().toString().isEmpty() || campoValor.getText().toString().isEmpty() || campoDescricao.getText().toString().isEmpty() || spinnerCategoriaReceita.getSelectedItem().toString().isEmpty()) {
             return false;
         }
         return true;
@@ -102,7 +110,6 @@ public class ReceitasActivity extends AppCompatActivity {
         campoValor.setText("");
         campoDate.setText(DateCustom.dataAtual());
         campoDescricao.setText("");
-        campoCategoria.setText("");
     }
     public  void abrirTelaprincipal(){
         startActivity(new Intent(this, Principal_acitivity.class));

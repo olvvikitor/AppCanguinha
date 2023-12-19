@@ -25,7 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 public class DespesasActivity extends AppCompatActivity {
-    private TextInputEditText campoDate, campoCategoria, campoDescricao;
+    private TextInputEditText campoDate, campoDescricao;
     private EditText campoValor;
     private Movimentacao movimentacao;
     private DatabaseReference ref = FirebaseConfig.getFirebase();
@@ -43,7 +43,8 @@ public class DespesasActivity extends AppCompatActivity {
         campoDate = findViewById(R.id.dataDespesa);
         spinnerCategoriaDespesa = findViewById(R.id.CategoriaDespesa);
 
-        String[] categorias = {"Categoria 1", "Categoria 2", "Categoria 3"};
+
+        String[] categorias = {"Alimentação", "Transportes", "Saúde", "Lazer"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categorias);
         spinnerCategoriaDespesa.setAdapter(adapter);
 
