@@ -51,10 +51,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#009E9E9E"
+            android:drawableLeft="@drawable/baseline_edit_24"
             android:ems="10"
             android:gravity="end"
+            android:hint="R$ 0,00"
             android:inputType="number|numberDecimal"
-            android:hint="R$ 0.00"
+            android:paddingLeft="21dp"
             android:text=""
             android:textColor="#615656"
             android:textSize="50dp" />
@@ -67,10 +69,12 @@
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/categoriaDespesa"
+        app:layout_constraintBottom_toTopOf="@+id/CategoriaDespesa"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataDespesa">
+        app:layout_constraintTop_toBottomOf="@+id/dataDespesa"
+        app:layout_constraintVertical_bias="0.521">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,7 +88,7 @@
         app:layout_constraintBottom_toTopOf="@+id/descricaoDespesa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoriaDespesa">
+        app:layout_constraintTop_toBottomOf="@+id/CategoriaDespesa">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,39 +113,38 @@
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="30dp"
+        android:drawableLeft="@drawable/baseline_date_range_24"
         android:hint="EX: 13/12/2023"
         android:inputType="datetime|date"
-        app:layout_constraintBottom_toTopOf="@+id/categoriaDespesa"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.26"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/descricaoDespesa"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:hint="EX: Valor mensal"
+        android:drawableLeft="@drawable/baseline_category_24"
+        android:hint="EX: Ifood"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoriaDespesa" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/categoriaDespesa"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:hint="EX: Valor"
-        android:inputType="text|textAutoComplete"
-        app:layout_constraintBottom_toTopOf="@+id/descricaoDespesa"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataDespesa" />
+
+    <Spinner
+        android:id="@+id/CategoriaDespesa"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:paddingLeft="10dp"
+        android:hint="Categoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="445dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

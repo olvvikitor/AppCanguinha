@@ -26,7 +26,6 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 public class Login extends AppCompatActivity {
     private EditText campoEmail,campoSenha;
     private Button button;
-
     private Usuario usuario;
     private FirebaseAuth autentificacao;
     private ProgressBar progressBar;

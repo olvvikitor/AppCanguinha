@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.canguinha.suvino.R;
@@ -31,6 +33,7 @@ public class DespesasActivity extends AppCompatActivity {
     private Double despesaTotal = 0.00;
     private Double despesaGerada = 0.00;
     private Double despesaAtualizada = 0.00;
+    private Spinner spinnerCategoriaDespesa;
 
 
     @Override
@@ -38,19 +41,24 @@ public class DespesasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_despesas_activity);
         campoDate = findViewById(R.id.dataDespesa);
-        campoCategoria = findViewById(R.id.categoriaDespesa);
+        spinnerCategoriaDespesa = findViewById(R.id.CategoriaDespesa);
+
+        String[] categorias = {"Categoria 1", "Categoria 2", "Categoria 3"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categorias);
+        spinnerCategoriaDespesa.setAdapter(adapter);
+
         campoDescricao = findViewById(R.id.descricaoDespesa);
         campoValor = findViewById(R.id.valorDespesa);
         campoDate.setText(DateCustom.dataAtual());
         recuperaDespesa();
-
     }
+
     public void salvarDespesa(View view){
        if(validarDespesa()==true) {
            String dateText = campoDate.getText().toString();
            movimentacao = new Movimentacao();
            movimentacao.setValor(Double.parseDouble(campoValor.getText().toString()));
-           movimentacao.setCategoria(campoCategoria.getText().toString());
+           movimentacao.setCategoria(spinnerCategoriaDespesa.getSelectedItem().toString());
            movimentacao.setData(campoDate.getText().toString());
            movimentacao.setTipo("d");
            movimentacao.setDescricao(campoDescricao.getText().toString());
@@ -61,6 +69,7 @@ public class DespesasActivity extends AppCompatActivity {
            despesaAtualizada = despesaGerada+despesaTotal;
            atualizarDespesa(despesaAtualizada);
            abrirTelaprincipal();
+           finish();
 
        }else{
                Toast.makeText(DespesasActivity.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
@@ -75,7 +84,6 @@ public class DespesasActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario user = snapshot.getValue(Usuario.class);
                 despesaTotal = user.getDespesaTotal();
-
             }
 
             @Override
@@ -91,7 +99,7 @@ public class DespesasActivity extends AppCompatActivity {
         usuarioReference.child("despesaTotal").setValue(despesa);
     }
     public Boolean validarDespesa() {
-        if (campoDate.getText().toString().isEmpty() || campoValor.getText().toString().isEmpty() || campoDescricao.getText().toString().isEmpty() || campoValor.getText().toString().isEmpty()) {
+        if (campoDate.getText().toString().isEmpty() || campoValor.getText().toString().isEmpty() || spinnerCategoriaDespesa.getSelectedItem().toString().isEmpty() || campoValor.getText().toString().isEmpty()) {
             return false;
         }
         return true;
@@ -100,7 +108,6 @@ public class DespesasActivity extends AppCompatActivity {
         campoValor.setText("");
         campoDate.setText(DateCustom.dataAtual());
         campoDescricao.setText("");
-        campoCategoria.setText("");
     }
     public  void abrirTelaprincipal(){
         startActivity(new Intent(this, Principal_acitivity.class));
