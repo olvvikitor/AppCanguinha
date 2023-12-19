@@ -5,7 +5,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,12 +38,32 @@ public class Principal_acitivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal_acitivity);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("CANGUINHA");
+        setSupportActionBar(toolbar);
         saudacao = findViewById(R.id.textSaudacao);
         saldo = findViewById(R.id.textSaldo);
         recuperarSaldo();
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_principal, menu );
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item) {
+        switch (item.getItemId()){
+            R.id.menu_sair:
+              break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void adicionarDespesa(View view) {
         startActivity(new Intent(this, DespesasActivity.class));
     }
