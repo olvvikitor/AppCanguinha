@@ -12,7 +12,6 @@ public class Usuario {
 
     private Double receitaTotal = 0.00;
     private Double despesaTotal = 0.00;
-
     public Usuario() {
 
 

@@ -74,6 +74,5 @@ public class MainActivity extends IntroActivity {
 
     public void abrirTelaPrincipal(){
         startActivity(new Intent(this, Principal_acitivity.class));
-
     }
 }
