@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@android:color/darker_gray"
     tools:context=".activity.Grafico_activity">
 
     <com.github.mikephil.charting.charts.PieChart
@@ -14,7 +14,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="36dp" />
+        android:layout_marginBottom="36dp"
+        />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChartReceita"
